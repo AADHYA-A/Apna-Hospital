@@ -1,0 +1,7 @@
+Flask>=3.0
+gunicorn>=22.0
+numpy
+pandas
+scikit-learn>=1.5
+joblib
+reportlab>=4.0
