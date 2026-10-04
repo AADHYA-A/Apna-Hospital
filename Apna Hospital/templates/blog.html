@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block title %}Blog · Apna Hospital{% endblock %}
+{% block content %}<article class="page"><h1>Blog</h1>
+<div class="card"><h2 style="margin-top:0">When AI should say "go to the hospital"</h2>
+<p>A symptom checker that only ranks diseases can be dangerously confident. Apna Hospital pairs the model with a deterministic safety layer: a short list of red-flag symptoms always triggers an emergency banner, whatever the model thinks.</p></div>
+<div class="card" style="margin-top:14px"><h2 style="margin-top:0">Why we show three answers, not one</h2>
+<p>Symptoms overlap. Showing the top three with scores, then asking the one question that best separates them, mirrors how clinicians reason and keeps users from fixating on a single label.</p></div>
+<div class="card" style="margin-top:14px"><h2 style="margin-top:0">Catching a silent data bug</h2>
+<p>The treatment table we inherited was shifted by one row, so several conditions showed another condition's medicines. We audited every row and rebuilt it. Always read your data.</p></div></article>{% endblock %}

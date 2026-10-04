@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}Apna Hospital · AI symptom triage{% endblock %}</title>
+<meta name="description" content="Describe how you feel in plain language. Get ranked possible conditions, a triage level, follow-up questions and a care plan in seconds.">
+<meta name="theme-color" content="#0B6E6A">
+<link rel="icon" href="{{ url_for('static', filename='img.png') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<script>try{var t=localStorage.getItem('ah_theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+{% set links=[('home','/','Check symptoms'),('diseases','/diseases','Conditions'),('about','/about','How it works'),('blog','/blog','Blog'),('developer','/developer','Developer'),('contact','/contact','Contact')] %}
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><img src="{{ url_for('static', filename='img.png') }}" alt="">Apna Hospital</a>
+  <nav class="main" aria-label="Main">{% for k,u,l in links %}<a href="{{u}}" class="{{ 'on' if page==k }}">{{l}}</a>{% endfor %}</nav>
+  <button class="iconbtn" id="theme" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
+  <a class="sos" href="tel:112">Emergency 112</a>
+</div></header>
+<nav class="mobnav" aria-label="Main mobile">{% for k,u,l in links %}<a href="{{u}}" class="{{ 'on' if page==k }}">{{l}}</a>{% endfor %}</nav>
+<main id="main" class="wrap">{% block content %}{% endblock %}</main>
+<footer class="foot"><div class="wrap">Apna Hospital is an educational project. Results come from a machine-learning model and are <b>not a medical diagnosis</b>. In an emergency call 112, or 108 for an ambulance in India.
+<br>&copy; 2026 Apna Hospital · Built by Aadhya A</div></footer>
+<script>document.getElementById('theme').onclick=function(){var d=document.documentElement,n=d.dataset.theme==='dark'?'light':'dark';d.dataset.theme=n;try{localStorage.setItem('ah_theme',n)}catch(e){}}</script>
+{% block scripts %}{% endblock %}
+</body></html>
