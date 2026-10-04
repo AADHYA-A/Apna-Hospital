@@ -1,3 +1,0 @@
-{% extends "base.html" %}{% block title %}Conditions · Apna Hospital{% endblock %}
-{% block content %}<section class="page" style="max-width:none"><h1>Conditions we model</h1><p class="muted">Tap one to start a check with its typical symptoms in mind. {{ items|length }} conditions.</p>
-<div class="dgrid">{% for d in items %}<div class="card"><h3>{{ d.name }}</h3><p class="small">{{ d.description }}</p><span class="tag">{{ d.specialist }}</span></div>{% endfor %}</div></section>{% endblock %}
